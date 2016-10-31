@@ -3,22 +3,23 @@ var path = require('path');
 
 module.exports = {
     entry: {
-        hitplane: './src/hitplane'
+        app: './app/src/app',
+        style: './app/src/style'
     },
     output: {
-        path: './dist',
+        path: './app/dist',
         filename: '[name].js'
     },
     module: {
         loaders: [
-            {
-                text: /\.ts?$/,
-                exclude: /node_modules/,
-                loader: 'ts'
-            },
+            // {
+            //     text: /\.ts?$/,
+            //     exclude: /node_modules/,
+            //     loader: 'ts'
+            // },
             { test: /\.css$/, loader: 'style!css' },
             { test: /\.less$/, loader: 'style!css!less' },
-            { test: /\.jpg$|\.png$/, loader: 'url?limit=81920&name=[name].[ext]' }
+            { test: /\.jpg$|\.png$/, loader: 'url?limit=10000&name=img/[name].[ext]' }
         ]
     },
     resolve: {
@@ -32,6 +33,6 @@ module.exports = {
     //     configFile: './.eslintrc'
     // },
     externals: {
-        // 'jQuery': 'jQuery'
+        'jQuery': 'jQuery'
     }
 };

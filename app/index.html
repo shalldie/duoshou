@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta content="email=no" name="format-detection">
+	<script src="dist/style.js"></script>
+	<link rel="stylesheet" type="text/css" href="lib/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="lib/swiper.min.css">
+	<script>
+        (function (doc, win) {
+            // 分辨率Resolution适配
+            var docEl = doc.documentElement,
+                    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function () {
+                        var clientWidth = docEl.clientWidth;
+                        docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                    }
+            // Abort if browser does not support addEventListener
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            recalc();
+        })(document, window);
+    </script>
+</head>
+
+<body>
+	<div id="main_wrap" class="swiper-container wh100">
+		<div class="swiper-wrapper wh100">
+			<div class="swiper-slide swiper-no-swiping slide-loading">
+				<div class="loading-box">
+					<div class="loading-box-dot"></div>
+					<span class="loading-info">0%</span>
+				</div>
+			</div>
+			<div class="swiper-slide swiper-no-swiping slide-ready">
+				<div class="start-btn"></div>
+			</div>
+			<div class="swiper-slide swiper-no-swiping">Slide 3</div>
+		</div>
+	</div>
+
+	<script src="lib/jquery.min.js"></script>
+	<script src="lib/swiper.jquery.min.js"></script>
+	<script src="dist/app.js"></script>
+</body>
+
+</html>
