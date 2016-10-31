@@ -45,6 +45,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(14); // 方法扩展
+	__webpack_require__(18); // 音乐
 	__webpack_require__(2); // 初始化swiper
 
 /***/ },
@@ -171,6 +172,28 @@
 
 	    return this;
 	}
+
+/***/ },
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = __webpack_require__(11);
+
+	// 背景音乐
+
+	$(".music-bg-lbl").click(function () {
+	    var self = $(this);
+	    self.toggleClass('music-stop');
+	    if (self.hasClass('music-stop')) {
+	        $("#music_bg")[0].pause();
+	    }
+	    else {
+	        $("#music_bg")[0].play();
+	    }
+	});
 
 /***/ }
 /******/ ]);

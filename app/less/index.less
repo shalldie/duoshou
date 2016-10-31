@@ -11,6 +11,41 @@ html,body{
     height: 100%;
 }
 
+.music-bg-lbl{
+    background: url(../img/music.png) no-repeat;
+    width: 1rem;
+    height: 1rem;
+    background-size: 100% 100%;
+    position: fixed;
+    top: 0.2rem;
+    right: 0.2rem;
+    z-index: 9999;
+    .animation(music-rotate 7s linear infinite);
+
+    &.music-stop{
+        .animation(none);
+        background-image: url(../img/music_sel.png);
+    }
+}
+
+@-webkit-keyframes music-rotate{
+    from{
+        .transform(rotate(0));
+    }
+    to{
+        .transform(rotate(360deg));
+    }
+}
+
+@keyframes music-rotate{
+    from{
+        .transform(rotate(0));
+    }
+    to{
+        .transform(rotate(360deg));
+    }
+}
+
 .swiper-slide{
     background-color: #fff;
 }
@@ -72,6 +107,9 @@ html,body{
         background: url(../img/index-title.png) no-repeat;
         background-size: 100%;
         font-size: 0;
+        position: absolute;
+        left: 0;
+        top: 1.2rem;
     }
 
     .start-btn{
