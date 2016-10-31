@@ -1,0 +1,19 @@
+{
+  "name": "duoshou",
+  "version": "1.0.0",
+  "description": "公司的**项目组，为双11准备的一个H5小游戏",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shalldie/duoshou.git"
+  },
+  "author": "shalldie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shalldie/duoshou/issues"
+  },
+  "homepage": "https://github.com/shalldie/duoshou#readme"
+}
