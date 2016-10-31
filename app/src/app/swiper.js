@@ -19,6 +19,12 @@ var mainSwiper = new Swiper('#main_wrap', {
 require('./loading')().done(function () {
     setTimeout(function () {
         mainSwiper.slideTo(1);
+
+
+        $({})
+            .will(() => $(".index-title-wrap").animateCss("bounceIn"))
+            .delay(1000)
+            .will(() => $(".index-title-wrap").animateCss("bounceIn"));
     }, 300);
 });
 

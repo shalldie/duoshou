@@ -8,12 +8,21 @@ var imgArr = [
 var ele = $(".loading-info");
 var num = 0; // 当前完成数量
 
+/**
+ * 触发器，加载图片计数
+ */
 function updateNum() {
     num++;
-    var per = ~~(num / imgArr.length) + "%";
+    var per = ~~(num / imgArr.length) + "%"; // 取整
     ele.html(per);
 }
 
+/**
+ * 预加载图片
+ * 
+ * @param {any} url 图片地址
+ * @returns Deferred
+ */
 function preloadImg(url) {
     var dfd = $.Deferred();
     var img = new Image();

@@ -33,20 +33,29 @@
 	<div class="music-bg-lbl"></div>
 	<div id="main_wrap" class="swiper-container wh100">
 		<div class="swiper-wrapper wh100">
+			<!--加载页面-->
 			<div class="swiper-slide swiper-no-swiping slide-loading">
 				<div class="loading-box">
 					<div class="loading-box-dot"></div>
 					<span class="loading-info">0%</span>
 				</div>
 			</div>
+			<!--游戏准备页面-->
 			<div class="swiper-slide swiper-no-swiping slide-ready">
 				<div class="index-title-wrap"></div>
 				<div class="start-btn"></div>
 			</div>
-			<div class="swiper-slide swiper-no-swiping">Slide 3</div>
+			<!--游戏页面-->
+			<div class="swiper-slide swiper-no-swiping slide-game">
+				<div class="game-shadow">
+					
+				</div>
+			</div>
+			<div class="swiper-slide swiper-no-swiping">Slide 4</div>
 		</div>
 	</div>
-	<audio id="music_bg" loop="" autoplay="">
+	<!--背景音乐-->
+	<audio id="music_bg" loop="loop" autoplay="autoplay">
 		<source src="mp3/duoshou_bg.mp3">
 	</audio>
 

@@ -74,6 +74,12 @@
 	__webpack_require__(10)().done(function () {
 	    setTimeout(function () {
 	        mainSwiper.slideTo(1);
+
+
+	        $({})
+	            .will(() => $(".index-title-wrap").animateCss("bounceIn"))
+	            .delay(1000)
+	            .will(() => $(".index-title-wrap").animateCss("bounceIn"));
 	    }, 300);
 	});
 
@@ -108,12 +114,21 @@
 	var ele = $(".loading-info");
 	var num = 0; // 当前完成数量
 
+	/**
+	 * 触发器，加载图片计数
+	 */
 	function updateNum() {
 	    num++;
-	    var per = ~~(num / imgArr.length) + "%";
+	    var per = ~~(num / imgArr.length) + "%"; // 取整
 	    ele.html(per);
 	}
 
+	/**
+	 * 预加载图片
+	 * 
+	 * @param {any} url 图片地址
+	 * @returns Deferred
+	 */
 	function preloadImg(url) {
 	    var dfd = $.Deferred();
 	    var img = new Image();
@@ -154,23 +169,23 @@
 	var $ = __webpack_require__(11);
 
 	$.fn.extend({
-	    animateCss: function (animationName) {
+	    animateCss: function (animationName, callback) {
 	        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
 	        this.addClass('animated ' + animationName).one(animationEnd, function () {
 	            $(this).removeClass('animated ' + animationName);
+	            callback && callback();
 	        });
 	    }
 	});
 
 	$.fn.will = function (callback, type) {
-	    type = type || 'fx';
-
-	    this.queue(function (next) {
-	        callback();
+	    //这里的this，表示jQuery对象
+	    this.queue(type || "fx", function (next) {  // fx 表示默认的队列
+	        //这里的this，是原生的对象
+	        callback && typeof callback == "function" && callback.call($(this)); //使用call，方便回调函数使用this
 	        next();
-	    }, type);
-
-	    return this;
+	    });
+	    return this; //返回this，方便进行链式调用
 	}
 
 /***/ },
