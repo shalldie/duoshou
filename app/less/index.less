@@ -124,3 +124,58 @@ html,body{
 }
 
 // 游戏页面
+.game-shadow{
+    background-color: rgba(0, 0, 0, .7);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    // display: none;
+
+    .num-left-wrap{
+        background: url(../img/num_bg.png) no-repeat;
+        background-size: 215px auto;
+        width: 215px;
+        height: 225px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        .transform(translate3d(-50%,-50%,0));
+
+
+        .num-go{
+            display: none;
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            position: relative;
+            top: 20%;
+            background: url(../img/num_bg.png) 10px -590px no-repeat;
+            background-size: 215px auto
+        }
+
+        .num-left{
+            width: 100px;
+            height: 125px;
+            background: url(../img/num_bg.png) no-repeat;
+            background-size: 215px auto;
+            background-position: -45px -240px;
+            margin: 0 auto;
+            top: 25%;
+            position: relative;
+
+
+            &.num-1{
+                background-position: -45px -480px;
+            }
+
+            &.num-2{
+                background-position: -45px -360px;
+            }
+
+            &.num-3{
+                background-position: -45px -240px;
+            }
+        }
+    }
+}

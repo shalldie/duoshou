@@ -36,4 +36,5 @@ setInterval(function () {
 // 第二屏，点击按钮跳转到第三屏
 $(".start-btn").click(function () {
     mainSwiper.slideTo(2);
+    require('./game');
 });
