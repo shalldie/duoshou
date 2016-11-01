@@ -1,9 +1,19 @@
 var $ = require('jQuery');
 var imgArr = [
-    "duoshou_bg_dot.png",
-    "loading_bg.png",
-    "index-bg.png"
-];
+    'loading_bg.png',
+    'logo.png',
+    'music.png',
+    'music_sel.png',
+    'num_bg.png',
+    'playPool_bg.png',
+    'playPool_txt.png',
+    'result-2code.png',
+    'result-imgs01.png',
+    'result-imgs02.png',
+    'result-imgs03.png',
+    'result-imgs04.png',
+    'result_bg.png',
+    'result_inner.png'];
 
 var ele = $(".loading-info");
 var num = 0; // 当前完成数量

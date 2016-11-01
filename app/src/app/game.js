@@ -37,11 +37,11 @@ class Game {
         var wrap = $(".game-wrap").off();
         var self = this;
 
-        wrap.click(function () {
+        wrap.on("touchstart", function () {
             $("#music_duo")[0].play();
         });
 
-        wrap.on("click", ".duo", function () { // 点击到无效区域
+        wrap.on("touchstart", ".duo", function () { // 点击到无效区域
             var self = $(this);
             if (self.data("hasClick")) return;
 
@@ -53,7 +53,7 @@ class Game {
             }, 1000);
         });
 
-        wrap.on("click", ".duo-p", function () { // 点击到有效区域
+        wrap.on("touchstart", ".duo-p", function () { // 点击到有效区域
             var eleP = $(this).parent();
             if (eleP.data("hasClick")) return;
             eleP.data("hasClick", true);
