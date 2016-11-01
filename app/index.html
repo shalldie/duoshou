@@ -59,18 +59,57 @@
 						<span class="game-time">10</span>
 					</div>
 					<div class="game-box">
-						<div class="duo duo—styleA">
-							
-						</div>
+
 					</div>
 				</div>
 			</div>
-			<div class="swiper-slide swiper-no-swiping">Slide 4</div>
+			<!--游戏结果页面-->
+			<div class="swiper-slide slide-result">
+				<div id="result_wrap" class="swiper-container wh100">
+					<div class="swiper-wrapper">
+						<!--结果页面-->
+						<div class="swiper-slide">
+							<div class="result-box">
+								<span class="game-score">0</span>
+								<span class="game-time">10</span>
+							</div>
+							<div class="result-pic">
+								<img class="result-img" src="img/result-imgs04.png" alt="result">
+								<div class="result-content">
+									<h2>专业伪剁手党</h2>
+									<p>梦想成为一枚叱咤江湖<br/>的剁手党老大<br/>奈何金钱总是投奔他方</p>
+								</div>
+							</div>
+							<div class="result-btn-wrap">
+								<a href="javascript:void(0)" class="btn-ag"></a>
+								<a href="javascript:void(0)" class="btn-more"></a>
+							</div>
+							<div class="to-bottom"></div>
+						</div>
+						<!--扩展页面-->
+						<div class="swiper-slide">
+							<div class="to-top"></div>
+							<div class="result-code"></div>
+							<div class="share-btn-wrap">
+								<a href="javascript:void(0)" class="btn-download"></a>
+								<a href="javascript:void(0)" class="btn-share"></a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
 		</div>
 	</div>
 	<!--背景音乐-->
 	<audio id="music_bg" loop="loop" autoplay="autoplay">
 		<source src="mp3/duoshou_bg.mp3">
+	</audio>
+	<audio id="music_duo">
+		<source src="mp3/duo-source.wav">
+	</audio>
+	<audio id="music_success">
+		<source src="mp3/duo-succeed.wav">
 	</audio>
 
 	<script src="lib/jquery.min.js"></script>

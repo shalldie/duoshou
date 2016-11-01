@@ -232,6 +232,24 @@ html,body{
             height: 2rem;
             background-size: 100% 100%;
             z-index: 902;
+
+            .duo-p{  // 有效区域
+                width: 50%;
+                height: 50%;
+                position: absolute;
+                display: inline-block;
+                left: 0;
+                bottom: 0;
+            }
+
+            .duo-knife{
+                position: absolute;
+                display: none;
+                width: 1rem;
+                height: 1.3rem;
+                background: url(../img/duo_knife.png) no-repeat;
+                background-size: 100% 100%;
+            }
         }
 
         .duo—styleA {
@@ -240,10 +258,210 @@ html,body{
 
         .duo—styleB {
             background-image: url(../img/duo_styleB.png);
+            .duo-knife{
+                display: block;
+                left: 0.3rem;
+                top: 1.1rem;
+            }
         }
 
         .duo—styleC {
             background-image: url(../img/duo_styleC.png);
+            .duo-knife{
+                display: block;
+                left: 1.1rem;
+                top: 0.4rem;
+            }
         }
+    }
+}
+
+// 游戏结果页面
+
+.slide-result{
+    background: #de4523 url(../img/result_bg.png) no-repeat;
+    background-size: 100% 100%;
+
+    .swiper-slide{
+        background-color: transparent;
+    }
+
+    .result-box{
+        z-index: 901;
+        background: url(../img/duoshou_bg_06.png) no-repeat;
+        width: 75%;
+        padding-top: 20%; 
+        background-size: 100%;
+        position: absolute;
+        top: 3%;
+        left: 50%;
+        margin-left: -37.5%;
+        >.game-score,
+        >.game-time{
+            position: absolute;
+            top: 50%;
+            .transform(translateY(-50%));
+            color: #333;
+            font-size: .6rem;
+            left: 30%;
+        }
+        >.game-time{
+            left: 70%;
+        }
+    }
+
+    // 图片结果部分
+    .result-pic{
+        background: url(../img/result_inner.png) no-repeat;
+        position: absolute;
+        width: 80%;
+        height: 8.2rem;
+        background-size: 100% 100%;
+        top: 16%;
+        left: 10%;
+        >img{
+            width: 80%;
+            margin: 0.6rem 10% 0.2rem;
+        }
+        .result-content{
+            text-align: center;
+            color: #000;
+            h2{
+                font-size: 0.5rem;
+            }
+            p{
+                font-size: 0.3rem;
+            }
+        }
+    }
+
+    // 按钮部分
+    .result-btn-wrap{
+        position: absolute;
+        height: 1rem;
+        width: 80%;
+        left: 10%;
+        bottom: 1.6rem;
+
+        a{
+            display: inline-block;
+            background-repeat: no-repeat;
+            width: 2.8rem;
+            height: 1rem;
+            background-size: 100%;
+        }
+
+        .btn-ag{
+            background-image: url(../img/btn-onemore.png);
+        }
+
+        .btn-more{
+            background-image: url(../img/btn-tigao.png);
+        }
+    }
+}
+
+.to-bottom{
+    position: absolute;
+    width: 1rem;
+    height: 0.8rem;
+    background: url(../img/btn-narrow.png) no-repeat;
+    left: 50%;
+    bottom: 0.2rem;
+    margin-left: -0.5rem;
+    background-size: 100%;
+    .animation(arrow_tb 1.6s ease infinite);
+}
+
+.to-top{
+    position: absolute;
+    width: 1rem;
+    height: 0.8rem;
+    background: url(../img/btn-narrow.png) no-repeat;
+    background-position: center bottom;
+    left: 50%;
+    top: 0.2rem;
+    margin-left: -0.5rem;
+    background-size: 100%;
+    .animation(arrow_tt 1.6s ease infinite);
+}
+
+@-webkit-keyframes arrow_tb{
+    from{
+        bottom: 0.5rem;
+        opacity: 0;
+    }
+    to{
+        bottom: 0.2rem;
+        opacity: 1;
+    }
+}
+
+@keyframes arrow_tb{
+    from{
+        bottom: 0.5rem;
+        opacity: 0;
+    }
+    to{
+        bottom: 0.2rem;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes arrow_tt{
+    from{
+        top: 0.5rem;
+        opacity: 0;
+    }
+    to{
+        top: 0.2rem;
+        opacity: 1;
+    }
+}
+
+@keyframes arrow_tt{
+    from{
+        top: 0.5rem;
+        opacity: 0;
+    }
+    to{
+        top: 0.2rem;
+        opacity: 1;
+    }
+}
+
+// 分享页面
+.result-code{
+    background: url(../img/result-2code.png) no-repeat;
+    position: absolute;
+    top: 2rem;
+    background-size: 100% 100%;
+    width: 6rem;
+    height: 8rem;
+    left: 0.75rem;
+    
+}
+
+.share-btn-wrap{
+    position: absolute;
+    height: 1rem;
+    width: 80%;
+    left: 10%;
+    bottom: 1.6rem;
+
+    a{
+        display: inline-block;
+        background-repeat: no-repeat;
+        width: 2.8rem;
+        height: 1rem;
+        background-size: 100%;
+    }
+
+    .btn-download{
+        background-image: url(../img/btn-line-bg.png);
+    }
+
+    .btn-share{
+        background-image: url(../img/btn-line-bg02.png);
     }
 }
