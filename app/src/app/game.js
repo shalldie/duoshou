@@ -109,7 +109,7 @@ class Game {
         delay = delay || 1000;
         setTimeout(function () {
             self.newItem();
-            self.start(delay - 48);
+            self.start(delay - 55);
         }, delay)
     }
 
