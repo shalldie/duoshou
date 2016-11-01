@@ -23,7 +23,7 @@ var num = 0; // 当前完成数量
  */
 function updateNum() {
     num++;
-    var per = ~~(num / imgArr.length) + "%"; // 取整
+    var per = ~~(num * 100 / imgArr.length) + "%"; // 取整
     ele.html(per);
 }
 
