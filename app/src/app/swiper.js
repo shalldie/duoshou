@@ -1,4 +1,7 @@
 var $ = require('jQuery');
+var Game = require('./game');
+var game;
+
 // 最外部容器swiper
 var mainSwiper = new Swiper('#main_wrap', {
     effect: 'fade',
@@ -36,5 +39,5 @@ setInterval(function () {
 // 第二屏，点击按钮跳转到第三屏
 $(".start-btn").click(function () {
     mainSwiper.slideTo(2);
-    require('./game');
+    game = new Game();
 });

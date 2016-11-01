@@ -44,130 +44,17 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(14); // 方法扩展
-	__webpack_require__(18); // 音乐
-	__webpack_require__(2); // 初始化swiper
+	__webpack_require__(3); // 方法扩展
+	__webpack_require__(5); // 音乐
+	__webpack_require__(6); // 初始化swiper
 
 /***/ },
 /* 1 */,
-/* 2 */
+/* 2 */,
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = __webpack_require__(11);
-	// 最外部容器swiper
-	var mainSwiper = new Swiper('#main_wrap', {
-	    effect: 'fade',
-	    noSwiping: true
-	    // direction: 'vertical',
-	    // loop: true,
-
-	    // // 如果需要分页器
-	    // pagination: '.swiper-pagination',
-
-	    // // 如果需要前进后退按钮
-	    // nextButton: '.swiper-button-next',
-	    // prevButton: '.swiper-button-prev',
-
-	    // // 如果需要滚动条
-	    // scrollbar: '.swiper-scrollbar',
-	});
-	__webpack_require__(10)().done(function () {
-	    setTimeout(function () {
-	        mainSwiper.slideTo(1);
-
-
-	        $({})
-	            .will(() => $(".index-title-wrap").animateCss("bounceIn"))
-	            .delay(1000)
-	            .will(() => $(".index-title-wrap").animateCss("bounceIn"));
-	    }, 300);
-	});
-
-	// 第二屏，晃动
-	setInterval(function () {
-	    $(".slide-ready .start-btn").animateCss("wobble");
-	}, 2000);
-
-	// 第二屏，点击按钮跳转到第三屏
-	$(".start-btn").click(function () {
-	    mainSwiper.slideTo(2);
-	    __webpack_require__(20);
-	});
-
-/***/ },
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var $ = __webpack_require__(11);
-	var imgArr = [
-	    "duoshou_bg_dot.png",
-	    "loading_bg.png",
-	    "index-bg.png"
-	];
-
-	var ele = $(".loading-info");
-	var num = 0; // 当前完成数量
-
-	/**
-	 * 触发器，加载图片计数
-	 */
-	function updateNum() {
-	    num++;
-	    var per = ~~(num / imgArr.length) + "%"; // 取整
-	    ele.html(per);
-	}
-
-	/**
-	 * 预加载图片
-	 * 
-	 * @param {any} url 图片地址
-	 * @returns Deferred
-	 */
-	function preloadImg(url) {
-	    var dfd = $.Deferred();
-	    var img = new Image();
-	    img.src = url;
-	    if (img.complete) {
-	        updateNum()
-	        dfd.resolve();
-	    } else {
-	        img.onload = function () {
-	            updateNum()
-	            dfd.resolve();
-	        }
-	    }
-	    return dfd;
-	}
-
-	var cbs = imgArr.map(n => preloadImg('img/' + n));
-
-	module.exports = function () {
-	    // 预加载所有图片
-	    return $.when.apply($, cbs).done(function () {
-	        ele.html("100%");
-	    });
-	}
-
-/***/ },
-/* 11 */
-/***/ function(module, exports) {
-
-	module.exports = jQuery;
-
-/***/ },
-/* 12 */,
-/* 13 */,
-/* 14 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var $ = __webpack_require__(11);
+	var $ = __webpack_require__(4);
 
 	$.fn.extend({
 	    animateCss: function (animationName, callback) {
@@ -190,13 +77,16 @@
 	}
 
 /***/ },
-/* 15 */,
-/* 16 */,
-/* 17 */,
-/* 18 */
+/* 4 */
+/***/ function(module, exports) {
+
+	module.exports = jQuery;
+
+/***/ },
+/* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = __webpack_require__(11);
+	var $ = __webpack_require__(4);
 
 	// 背景音乐
 
@@ -212,25 +102,86 @@
 	});
 
 /***/ },
-/* 19 */,
-/* 20 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = __webpack_require__(11);
+	var $ = __webpack_require__(4);
+	var Game = __webpack_require__(7);
+	var game;
 
-	var gameLoading = __webpack_require__(21);
+	// 最外部容器swiper
+	var mainSwiper = new Swiper('#main_wrap', {
+	    effect: 'fade',
+	    noSwiping: true
+	    // direction: 'vertical',
+	    // loop: true,
 
-	gameLoading();
+	    // // 如果需要分页器
+	    // pagination: '.swiper-pagination',
 
-	class Game {
+	    // // 如果需要前进后退按钮
+	    // nextButton: '.swiper-button-next',
+	    // prevButton: '.swiper-button-prev',
 
-	}
+	    // // 如果需要滚动条
+	    // scrollbar: '.swiper-scrollbar',
+	});
+	__webpack_require__(9)().done(function () {
+	    setTimeout(function () {
+	        mainSwiper.slideTo(1);
+
+
+	        $({})
+	            .will(() => $(".index-title-wrap").animateCss("bounceIn"))
+	            .delay(1000)
+	            .will(() => $(".index-title-wrap").animateCss("bounceIn"));
+	    }, 300);
+	});
+
+	// 第二屏，晃动
+	setInterval(function () {
+	    $(".slide-ready .start-btn").animateCss("wobble");
+	}, 2000);
+
+	// 第二屏，点击按钮跳转到第三屏
+	$(".start-btn").click(function () {
+	    mainSwiper.slideTo(2);
+	    game = new Game();
+	});
 
 /***/ },
-/* 21 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = __webpack_require__(11);
+	var $ = __webpack_require__(4);
+
+	var gameLoading = __webpack_require__(8);
+
+	class Game {
+	    constructor() {
+	        this.init();
+	    }
+
+	    /**
+	     * 初始化
+	     * 
+	     * 
+	     * @memberOf Game
+	     */
+	    init() {
+	        gameLoading(function () {
+
+	        });
+	    }
+	}
+
+	module.exports = Game;
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = __webpack_require__(4);
 
 	/**
 	 * 去除原有样式
@@ -281,6 +232,60 @@
 	}
 
 	module.exports = makeAnimate;
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var $ = __webpack_require__(4);
+	var imgArr = [
+	    "duoshou_bg_dot.png",
+	    "loading_bg.png",
+	    "index-bg.png"
+	];
+
+	var ele = $(".loading-info");
+	var num = 0; // 当前完成数量
+
+	/**
+	 * 触发器，加载图片计数
+	 */
+	function updateNum() {
+	    num++;
+	    var per = ~~(num / imgArr.length) + "%"; // 取整
+	    ele.html(per);
+	}
+
+	/**
+	 * 预加载图片
+	 * 
+	 * @param {any} url 图片地址
+	 * @returns Deferred
+	 */
+	function preloadImg(url) {
+	    var dfd = $.Deferred();
+	    var img = new Image();
+	    img.src = url;
+	    if (img.complete) {
+	        updateNum()
+	        dfd.resolve();
+	    } else {
+	        img.onload = function () {
+	            updateNum()
+	            dfd.resolve();
+	        }
+	    }
+	    return dfd;
+	}
+
+	var cbs = imgArr.map(n => preloadImg('img/' + n));
+
+	module.exports = function () {
+	    // 预加载所有图片
+	    return $.when.apply($, cbs).done(function () {
+	        ele.html("100%");
+	    });
+	}
 
 /***/ }
 /******/ ]);

@@ -19,7 +19,7 @@ module.exports = {
             // },
             { test: /\.css$/, loader: 'style!css' },
             { test: /\.less$/, loader: 'style!css!less' },
-            { test: /\.jpg$|\.png$/, loader: 'url?limit=10000&name=img/[name].[ext]' }
+            { test: /\.jpg$|\.png$/, loader: 'url?limit=1&name=img/[name].[ext]' }
         ]
     },
     resolve: {
