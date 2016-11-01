@@ -107,9 +107,9 @@ class Game {
 
         var self = this;
         delay = delay || 1000;
+        self.newItem();
         setTimeout(function () {
-            self.newItem();
-            self.start(delay - 55);
+            self.start(delay - 50);
         }, delay)
     }
 
