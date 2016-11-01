@@ -109,7 +109,7 @@ class Game {
         delay = delay || 1000;
         setTimeout(function () {
             self.newItem();
-            self.start(delay - 40);
+            self.start(delay - 48);
         }, delay)
     }
 
@@ -122,7 +122,7 @@ class Game {
                 clearInterval(timer);
                 setTimeout(function () {
                     self.end.fire(self.score);
-                }, 1100);
+                }, 1600);
             }
         }, 1000);
     }
