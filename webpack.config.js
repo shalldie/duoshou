@@ -17,6 +17,14 @@ module.exports = {
             //     exclude: /node_modules/,
             //     loader: 'ts'
             // },
+            {
+                text: /.js$/,
+                exclude: /node_modules/,
+                loader: 'babel',
+                query: {
+                    presets: ['es2015']
+                }
+            },
             { test: /\.css$/, loader: 'style!css' },
             { test: /\.less$/, loader: 'style!css!less' },
             { test: /\.jpg$|\.png$/, loader: 'url?limit=1&name=img/[name].[ext]' }
