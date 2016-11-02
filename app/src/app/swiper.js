@@ -15,9 +15,9 @@ var resultSwiper = new Swiper('#result_wrap', {
     "": ""
 });
 
-$(".btn-more").click(function () {
-    resultSwiper.slideTo(1);
-});
+// $(".btn-more").click(function () {
+//     resultSwiper.slideTo(1);
+// });
 
 $(".btn-ag").click(function () {
     newGame();
