@@ -51,9 +51,13 @@ function preloadImg(url) {
         updateNum()
         dfd.resolve();
     } else {
-        img.onload = function() {
+        img.onload = function () {
             updateNum()
             dfd.resolve();
+        }
+
+        img.onerror = function () {
+            console.log('error:' + url);
         }
     }
     return dfd;
@@ -61,9 +65,9 @@ function preloadImg(url) {
 
 var cbs = imgArr.map(n => preloadImg('dist/img/' + n));
 
-module.exports = function() {
+module.exports = function () {
     // 预加载所有图片
-    return $.when.apply($, cbs).done(function() {
+    return $.when.apply($, cbs).done(function () {
         ele.html("100%");
     });
 }
