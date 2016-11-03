@@ -1,5 +1,20 @@
 var $ = require('jQuery');
 var imgArr = [
+    'btn-line-bg.png',
+    'btn-line-bg02.png',
+    'btn-narrow.png',
+    'btn-onemore.png',
+    'btn-tigao.png',
+    'duo_knife.png',
+    'duo_styleA.png',
+    'duo_styleB.png',
+    'duo_styleC.png',
+    'duoshou_bg_06.png',
+    'duoshou_bg_dot.png',
+    'img_guide_weixin.png',
+    'index-bg.png',
+    'index-title.png',
+    'index_star_btn.png',
     'loading_bg.png',
     'logo.png',
     'music.png',
@@ -7,13 +22,7 @@ var imgArr = [
     'num_bg.png',
     'playPool_bg.png',
     'playPool_txt.png',
-    'result-2code.png',
-    'result-imgs01.png',
-    'result-imgs02.png',
-    'result-imgs03.png',
-    'result-imgs04.png',
-    'result_bg.png',
-    'result_inner.png'];
+    'result-2code.png',];
 
 var ele = $(".loading-info");
 var num = 0; // 当前完成数量
