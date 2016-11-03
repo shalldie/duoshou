@@ -49,7 +49,7 @@ function preloadImg(url) {
     return dfd;
 }
 
-var cbs = imgArr.map(n => preloadImg('img/' + n));
+var cbs = imgArr.map(n => preloadImg('dist/img/' + n));
 
 module.exports = function () {
     // 预加载所有图片
