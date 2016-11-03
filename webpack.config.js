@@ -12,11 +12,6 @@ module.exports = {
     },
     module: {
         loaders: [
-            // {
-            //     text: /\.ts?$/,
-            //     exclude: /node_modules/,
-            //     loader: 'ts'
-            // },
             {
                 text: /.js$/,
                 exclude: /node_modules/,
