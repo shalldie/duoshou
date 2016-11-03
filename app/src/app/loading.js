@@ -22,7 +22,8 @@ var imgArr = [
     'num_bg.png',
     'playPool_bg.png',
     'playPool_txt.png',
-    'result-2code.png',];
+    'result-2code.png'
+];
 
 var ele = $(".loading-info");
 var num = 0; // 当前完成数量
@@ -50,7 +51,7 @@ function preloadImg(url) {
         updateNum()
         dfd.resolve();
     } else {
-        img.onload = function () {
+        img.onload = function() {
             updateNum()
             dfd.resolve();
         }
@@ -60,9 +61,9 @@ function preloadImg(url) {
 
 var cbs = imgArr.map(n => preloadImg('dist/img/' + n));
 
-module.exports = function () {
+module.exports = function() {
     // 预加载所有图片
-    return $.when.apply($, cbs).done(function () {
+    return $.when.apply($, cbs).done(function() {
         ele.html("100%");
     });
 }
