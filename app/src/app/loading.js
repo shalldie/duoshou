@@ -11,7 +11,7 @@ var imgArr = [
     'duo_styleC.png',
     'duoshou_bg_06.png',
     'duoshou_bg_dot.png',
-    'img_guide_weixin.png',
+    // 'img_guide_weixin.png',
     'index-bg.png',
     'index-title.png',
     'index_star_btn.png',
